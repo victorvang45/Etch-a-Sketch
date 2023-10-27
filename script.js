@@ -1,5 +1,6 @@
 let click = false;
 let color = 'black';
+let rainbowFlag = false;
 
 function CreateBoard(size) {
     let board = document.querySelector('.board');
@@ -21,7 +22,7 @@ function CreateBoard(size) {
     squares.forEach((square) => {
 
         square.addEventListener('mouseover', () => {
-            if (click) {
+            if (click && rainbowFlag == false) {
                 square.style.backgroundColor = color;
             }
         });
@@ -52,8 +53,33 @@ function erase() {
 }
 
 function changeColor() {
+    rainbowFlag = false;
     let colorpick = document.getElementById('colorpick').value;
     color = colorpick;
+}
+
+function rainbow() {
+    const randomRed = Math.floor(Math.random() * 256);
+    const randomGreen = Math.floor(Math.random() * 256);
+    const randomBlue = Math.floor(Math.random() * 256);
+    color = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+
+}
+
+
+function rainbowMode() {
+    rainbowFlag = true;
+    let squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+
+        square.addEventListener('mouseover', () => {
+            if (click && rainbowFlag == true) {
+                rainbow();
+                square.style.backgroundColor = color;
+            }
+        });
+    });
+
 }
 
 

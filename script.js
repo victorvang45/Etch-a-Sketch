@@ -51,6 +51,11 @@ function erase() {
     color = 'white';
 }
 
+function changeColor() {
+    let colorpick = document.getElementById('colorpick').value;
+    color = colorpick;
+}
+
 
 CreateBoard(16);
 

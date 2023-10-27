@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8:">
-        <title>Etch-a-Sketch</title>
-        <link rel="stylesheet" type="text/css"  href="style.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <div class="flex-container">
-            <div class="title">Etch-a-Sketch</div>
-            <div class="content">
-                <div class="board"></div>
-                <div class="color-container">
-                    <input class="multicolor" type="color">
-                    <span>Color</span>
-                </div>
-                <div class="buttons">
-                    <div class ="button">
-                        <button>Random</button>
-                    </div>
-                    <div class ="button">
-                        <button>Eraser</button>
-                    </div>
-                    <div class ="button">
-                        <button>Reset</button>
-                    </div>
-                </div>
+
+<head>
+    <meta charset="UTF-8:">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="title">Etch-a-Sketch</div>
+        <div class="content">
+            <div class="board"></div>
+            <div class="color-container">
+                <input class="multicolor" type="color">
+                <label>Color</label>
             </div>
-            <div class="mode">Mode: Sketch</div>
-            <div class="slide-container">
-                <input class="slider" type="range" min="1" max="100" value="16">
-                <span class="sliderValue">Grid Size: 16 x 16</span>
+            <div class="buttons">
+                <div class="button">
+                    <button class="rainbow">Rainbow</button>
+                </div>
+                <div class="button">
+                    <button onclick="erase()">Eraser</button>
+                </div>
+                <div class="button">
+                    <button onclick="resetBoard()">Reset</button>
+                </div>
             </div>
         </div>
-    </body>
+        <div class="mode">Mode: Not Sketching</div>
+        <div class="slide-container">
+            <input oninput="rangeFunction()" class="slider" id="sliderange" type="range" min="1" max="100" value="16">
+            <label class="sliderValue">Grid Size: 16 x 16</label>
+        </div>
+    </div>
+</body>
+
 </html>

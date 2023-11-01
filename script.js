@@ -49,6 +49,7 @@ function rangeFunction() {
 
 
 function erase() {
+    rainbowFlag = false;
     color = 'white';
 }
 
